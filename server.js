@@ -18,9 +18,9 @@ app.use(cors());
 const router = new Router();
 
 router.get("/",async (ctx,next)=>{
-  const books = ["Hello World"];
+  const runnels = ["Hello World"];
   ctx.status = HttpStatus.OK;
-  ctx.body = books;
+  ctx.body = runnels;
   await next();
 });
 
