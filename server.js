@@ -1,4 +1,3 @@
-
 const Koa = require("koa");
 const BodyParser = require("koa-bodyparser");
 const Router = require("koa-router");
@@ -10,6 +9,9 @@ const HttpStatus = require("http-status");
 
 const app = new Koa();
 
+const static_pages = new Koa();
+static_pages.use(serve(__dirname + "/runnel_frontend/build")); //serve the build directory
+app.use(mount("/", static_pages));
 const PORT = process.env.PORT || 3000;
 
 app.use(BodyParser());
